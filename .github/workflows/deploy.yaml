@@ -1,16 +1,5 @@
-# .github/workflows/deploy.yaml
-
-name: Deploy to Google App Engine
-on:
-  push:
-    branches:
-      - main
-jobs:
-  build:
-    name: GAE Deploy
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: GoogleCloudPlatform/github-actions/appengine-deploy@master
-        with:
-          credentials: ${{ secrets.gcp_credentials }}
+- name: Deploy to Google App Engine
+  uses: atRobertoFlores/gae_deploy_action@master
+  with:
+    service_account: ${{ secrets.SERVICE_ACCOUNT }}
+    project_name: ${{ secrets.PROJECT_NAME }}
