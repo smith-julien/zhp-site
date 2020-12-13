@@ -16,6 +16,7 @@ const url = "https://www.zwiftpower.com/api3.php?do=team_riders&id=11815";
 
 const settings = { method: "Get" };
 
+const date = Date.now();
 
 const prefix = "!";
 
@@ -30,6 +31,11 @@ client.on("message", function (message) {
 
   if (command === "ping") {
     const timeTaken = Date.now() - message.createdTimestamp;
+    message.reply(`Pong! This message had a latency of ${timeTaken}ms.`);
+  }
+
+  if (command === "started") {
+    const timeTaken = Date.now() - date;
     message.reply(`Pong! This message had a latency of ${timeTaken}ms.`);
   }
 
@@ -66,7 +72,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('Hello from App Engine! ' + config.BOT_TOKEN);
+  res.send('Hello from App Engine!');
 });
 
 // Listen to the App Engine-specified port, or 8080 otherwise
