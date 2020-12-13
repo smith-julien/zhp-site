@@ -1,4 +1,5 @@
 # [START app_yaml]
 runtime: nodejs12
-BOT_TOKEN:${{ secrets.BOT_TOKEN }}
+env_variables:
+  BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
 # [END app_yaml]
