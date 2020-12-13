@@ -1,5 +1,0 @@
-# [START app_yaml]
-runtime: nodejs12
-env_variables:
-  BOT_TOKEN: ${{ secrets.CONFIG_BOT_TOKEN }}
-# [END app_yaml]
