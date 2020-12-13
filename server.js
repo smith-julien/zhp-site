@@ -36,7 +36,7 @@ client.on("message", function (message) {
 
   if (command === "started") {
     const timeTaken = Date.now() - date;
-    message.reply(`Pong! This message had a latency of ${timeTaken}ms.`);
+    message.reply(`Server is started since ${timeTaken}ms.`);
   }
 
   if (command === "hello") {
