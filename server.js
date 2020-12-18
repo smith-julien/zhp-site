@@ -41,7 +41,7 @@ client.on("message", function (message) {
 
   if (command === "prout") {    
     if (args.length>0) {
-      const name = args
+      const name = args[0]
       if (name.toLowerCase().indexOf('julien') >-1 ||  name.toLowerCase().indexOf('pierre') >-1) {
         message.reply(`Prout Alain, bien tenté`);
       } else {
