@@ -39,6 +39,19 @@ client.on("message", function (message) {
     message.reply(`Server is started since ${timeTaken}ms.`);
   }
 
+  if (command === "prout") {    
+    if (args.length>0) {
+      const name = args
+      if (name.toLowerCase().indexOf('julien') >-1 ||  name.toLowerCase().indexOf('pierre') >-1) {
+        message.reply(`Prout Alain, bien tenté`);
+      } else {
+        message.reply(`Prout ${name}`);
+      }
+    } else {
+      message.reply(`Tu as oublié le nom`);
+    }
+  }
+
   if (command === "hello") {
     const timeTaken = Date.now() - message.createdTimestamp;
     message.reply(`Hello! je suis le bot Zwift mes commandes sont ping, sum, hello, team,... (bientôt de nouvelles vont arriver)`);
